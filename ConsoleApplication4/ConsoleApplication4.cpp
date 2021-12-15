@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 using namespace std;
 class Maths
 {
@@ -69,6 +70,51 @@ public:
 			cout << "Number entered wrongly\n";
 		}
 	}
+	void rollingadice()
+	{
+		srand(unsigned(time(0)));
+		int x = rand() % 7;
+		switch (x)
+		{
+		case 1:
+			cout << "Your price is a keychain\n";
+			break;
+		case 2:
+			cout << "Your price is a cup\n";
+			break;
+		case 3:
+			cout << "Your prize is a necklace\n";
+			break;
+		case 4:
+			cout << "Your price is a T-Shirt\n";
+			break;
+		case 5:
+			cout << "Your price is a watch\n";
+			break;
+		case 6:
+			cout << "Your price is an original headphones\n";
+		}
+	}
+	void collatz(int num)
+	{
+		if (num >= 0)
+		{
+			cout << num << "\t";
+			while (num != 1)
+			{
+				if (num % 2 == 0)
+				{
+					num /= 2;
+					cout << num << "\t";
+				}
+				else
+				{
+					num = (num * 3) + 1;
+					cout << num << "\t";
+				}
+			}
+		}
+	}
 };
 int main()
 {
@@ -77,4 +123,6 @@ int main()
 	M.summation(54);
 	M.prime(1234567);
 	M.combination(8, 6);
+	M.rollingadice();
+	M.collatz(121);
 }
