@@ -95,8 +95,10 @@ public:
 			cout << "Your price is an original headphones\n";
 		}
 	}
-	void collatz(int num)
+	void collatz()
 	{
+		srand(unsigned(time(0)));
+		int num = rand();
 		if (num >= 0)
 		{
 			cout << num << "\t";
@@ -124,5 +126,5 @@ int main()
 	M.prime(1234567);
 	M.combination(8, 6);
 	M.rollingadice();
-	M.collatz(121);
+	M.collatz();
 }
